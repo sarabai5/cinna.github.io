@@ -63,9 +63,25 @@ body{
     display: flex;
 }
 .nav-icon{
+    position: relative;
     display: flex;
     padding: 0.28em;
     width: 0.31rem;
+}
+#cart-num{
+    display: none;
+    position: absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    background-color: #EF6B00;
+    border-radius: 0.1rem;
+    font-family: sans-serif;
+    font-size: 0.14rem;
+    line-height: 0.18rem;
+    color: #FFD433;
+    text-align: center;
 }
 
 
@@ -73,6 +89,8 @@ body{
 
 
 
+
+/* content */
 .rollbox{
     position: absolute;
     top: 1rem;

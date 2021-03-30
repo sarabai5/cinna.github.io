@@ -54,7 +54,7 @@ var Rolls = [
 
 /* choose numbers */
 function selectNum(index, num){
-    console.log(`User select rollNum is ${num}`)
+    console.log(`User select rollNum is ${num}`) 
     localStorage.setItem("boxSelect", JSON.stringify({
         index: index,
         num: num
@@ -82,7 +82,7 @@ let boxSelect = JSON.parse(localStorage.getItem("boxSelect"))
     }
 */
 
-let restNum = boxSelect.num
+let restNum = boxSelect ? boxSelect.num : null
 
 function countRoll(index, flag){
     let count = Rolls[index].count;
@@ -117,7 +117,12 @@ function countRoll(index, flag){
 
         }
     }
-console.log(restNum)
+    let progressDom = document.getElementsByClassName("task-undone")
+    if (restNum == 0) {
+        progressDom[0].style.backgroundColor = "#FFD433"
+    } else {
+        progressDom[0].style.backgroundColor = "#FFFFFF"
+    }
 }
 
 /* choose glazing */
@@ -127,7 +132,7 @@ function addGlazing(index) {
     dom.style.backgroundColor = "#FFE274"; 
 
     let content = document.getElementsByClassName("glazings")[index]
-    if (content.style.display === "flex") {
+    if (content.style.display == "flex") {
       content.style.display = "none";
       dom.style.backgroundColor = "#FFFFFF"; 
     } else {
@@ -162,6 +167,7 @@ function onload(){
     box.style.display = "flex";
 
     glazing();
+    onloadMenu();
 }
 
 function selectGlz(index){
@@ -175,4 +181,28 @@ function selectGlz(index){
     }
 
     dom.style.backgroundColor = "#FFE274"
+}
+
+function addCart(){
+    if (restNum == 0) {
+        let num = localStorage.getItem("cartNum") || 0
+        num++;
+        let dom = document.getElementById("cart-num")
+        dom.style.display = "flex";
+        dom.textContent = num
+        localStorage.setItem("cartNum", num)
+        window.location.href = "menu.html"
+    } else return;
+}
+
+function onloadMenu() {
+    let num = localStorage.getItem("cartNum") || 0
+    let dom = document.getElementById("cart-num")
+    dom.textContent = num
+    if (num > 0) {
+        dom.style.display = "inline";
+    } else {
+        dom.style.display = "none";
+    }
+
 }
