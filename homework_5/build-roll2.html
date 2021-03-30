@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="build-roll2.css">
+    <title>Bon Bon Cinnamon Roll</title>
+    <script src="rem.js"></script>
+    <script src="order.js"></script>
+
+</head>
+
+<body onload="onload()">
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img class="logobig" src="asset/logobig.png" alt="logo-big" />
+            </a>
+        </div>
+        <div class="nav-block">
+            <div class="nav-links">
+                <a href="#ourstory">Our Story</a>
+                <a href="menu.html" style="margin:0 0 0 0.2rem;">Cinnamon Rolls</a>
+                <a href="" style="margin:0 0 0 0.2rem;">Tracker</a>
+            </div>
+            <div class="nav-item">
+                <a href="" class="nav-icon">
+                    <img src="asset/account.png" alt="my-account-icon" />
+                </a>
+                <a href="" class="nav-icon">
+                    <img src="asset/cart.png" alt="shopping-cart" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="top">
+        <a class="back-button" href="">Back</a>
+        <div class="progress">
+            <div class="stages">
+                <div class="start">
+                    <p>Start</p>
+                </div>
+                <div class="choose-numbers">
+                    <p>Choose Numbers</p>
+                </div>
+                <div class="choose-rolltype">
+                    <p>Choose Roll Type</p>
+                </div>
+                <div class="choose-glazing">
+                    <p>Choose Glazing</p>
+                </div>
+                <div class="added">
+                    <p>Added</p>
+                </div>
+            </div>
+            <div class="dot-circle">
+                <div class="dot"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+
+            <div class="hr">
+                <div class="hr-solid"></div>
+                <div class="hr-dash"></div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="top">
+        <div class="progress">
+            <div class="dot-circle">
+                <a class="task-done" href="build-roll1.html">Choose Numbers</a>
+                <a class="task-done" href="build-roll2.html">Choose Rolls</a>
+                <a class="task-undone">Choose Glazing</a>
+                <a class="task-undone">Ready</a>
+            </div>
+            <div class="hr">
+                <hr class="hr-solid">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="build">
+        <div class="container">
+            <div class="box box-0" style="background-image: url('asset/box1.png');"></div>
+            <div class="box box-1" style="background-image: url('asset/box4.png');"></div>
+            <div class="box box-2" style="background-image: url('asset/box9.png');"></div>
+            <div class="box box-3" style="background-image: url('asset/box16.png');"></div>
+        </div>
+
+        <div class="add-items">
+
+            <div class="roll-selections">
+                <h1>What rolls and glazing would you like?</h1>
+                <div class="roll-selection-box">
+
+                    <div class="roll-box" style="background-image: url('asset/menu1.png');"></div>
+                    <div class="roll-glazing">
+                        <div class="number-box">
+                            <h1>Classic Roll</h1>
+                            <div class="roll-title">
+
+                                <div class="number-input">
+                                    <span class="input-number-decrement" onclick="countRoll(0, -1)">–</span><input
+                                        class="input-number" type="text" value="0" min="0" max="10" /><span
+                                        class="input-number-increment" onclick="countRoll(0, 1)">+</span>
+                                </div>
+                                <button type="button" class="add-glazing-button" onclick="addGlazing(0)">Add
+                                    Glazing</button>
+                            </div>
+                        </div>
+                        <div class="glazings">
+                            <button class="glz">Sugar Milk</button>
+                            <button class="glz">Vanilla Milk</button>
+                            <button class="glz">Double Chocolate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roll-selection-box">
+
+                    <div class="roll-box" style="background-image: url('asset/menu2.png');">
+                    </div>
+                    <div class="roll-glazing">
+                        <div class="number-box">
+                            <h1>Honey Pecan Roll</h1>
+                            <div class="roll-title">
+
+                                <div class="number-input">
+                                    <span class="input-number-decrement" onclick="countRoll(1, -1)">–</span><input
+                                        class="input-number" type="text" value="0" min="0" max="10"><span
+                                        class="input-number-increment" onclick="countRoll(1, 1)">+</span>
+                                </div>
+                                <button type="button" class="add-glazing-button" onclick="addGlazing(1)">Add
+                                    Glazing</button>
+                            </div>
+                        </div>
+                        <div class="glazings">
+                            <button class="glz">Sugar Milk</button>
+                            <button class="glz">Vanilla Milk</button>
+                            <button class="glz">Double Chocolate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roll-selection-box">
+
+                    <div class="roll-box" style="background-image: url('asset/menu3.png');"></div>
+
+                    <div class="roll-glazing">
+                        <div class="number-box">
+                            <h1>Berry Roll</h1>
+                            <div class="roll-title">
+
+                                <div class="number-input">
+                                    <span class="input-number-decrement" onclick="countRoll(2, -1)">–</span><input
+                                        class="input-number" type="text" value="0" min="0" max="10"><span
+                                        class="input-number-increment" onclick="countRoll(2, 1)">+</span>
+                                </div>
+                                <button type="button" class="add-glazing-button" onclick="addGlazing(2)">Add
+                                    Glazing</button>
+                            </div>
+                        </div>
+                        <div class="glazings">
+                            <button class="glz">Sugar Milk</button>
+                            <button class="glz">Vanilla Milk</button>
+                            <button class="glz">Double Chocolate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roll-selection-box">
+
+                    <div class="roll-box" style="background-image: url('asset/menu4.png');"></div>
+                    <div class="roll-glazing">
+                        <div class="number-box">
+                            <h1>Double Chocolate Roll</h1>
+                            <div class="roll-title">
+
+                                <div class="number-input">
+                                    <span class="input-number-decrement" onclick="countRoll(3, -1)">–</span><input
+                                        class="input-number" type="text" value="0" min="0" max="10"><span
+                                        class="input-number-increment" onclick="countRoll(3, 1)">+</span>
+                                </div>
+                                <button type="button" class="add-glazing-button" onclick="addGlazing(3)">Add
+                                    Glazing</button>
+                            </div>
+                        </div>
+                        <div class="glazings">
+                            <button class="glz">Sugar Milk</button>
+                            <button class="glz">Vanilla Milk</button>
+                            <button class="glz">Double Chocolate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roll-selection-box">
+
+                    <div class="roll-box" style="background-image: url('asset/menu5.png');"></div>
+                    <div class="roll-glazing">
+                        <div class="number-box">
+                            <h1>Gluten-free Classic Roll</h1>
+                            <div class="roll-title">
+
+                                <div class="number-input">
+                                    <span class="input-number-decrement" onclick="countRoll(4, -1)">–</span><input
+                                        class="input-number" type="text" value="0" min="0" max="10"><span
+                                        class="input-number-increment" onclick="countRoll(4, 1)">+</span>
+                                </div>
+                                <button type="button" class="add-glazing-button" onclick="addGlazing(4)">Add
+                                    Glazing</button>
+                            </div>
+                        </div>
+                        <div class="glazings">
+                            <button class="glz">Sugar Milk</button>
+                            <button class="glz">Vanilla Milk</button>
+                            <button class="glz">Double Chocolate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roll-selection-box">
+
+                    <div class="roll-box" style="background-image: url('asset/menu6.png');"></div>
+                    <div class="roll-glazing">
+                        <div class="number-box">
+                            <h1>Pumpkin Spice Roll</h1>
+                            <div class="roll-title">
+
+                                <div class="number-input">
+                                    <span class="input-number-decrement" onclick="countRoll(5, -1)">–</span><input
+                                        class="input-number" type="text" value="0" min="0" max="10"><span
+                                        class="input-number-increment" onclick="countRoll(5, 1)">+</span>
+                                </div>
+                                <button type="button" class="add-glazing-button" onclick="addGlazing(5)">Add
+                                    Glazing</button>
+                            </div>
+                        </div>
+                        <div class="glazings">
+                            <button class="glz">Sugar Milk</button>
+                            <button class="glz">Vanilla Milk</button>
+                            <button class="glz">Double Chocolate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="add-cart">
+                <input class="add-submit" type="submit" value="Add to Cart">
+            </form>
+        </div>
+    </div><br>
+
+
+    <div class="page-footer">
+        <div class="footer">
+            <div class="footer-left">
+                <img class="shop-icon" src="asset/shop-icon.png" alt="shop icon">
+                <div class="footer-about">
+                    <img src="asset/small-logo.png" alt="small logo">
+                    <div class="footer-links">
+                        <a href="">About Us</a>
+                        <a href="">Contact</a>
+                        <a href="">FAQ</a>
+                        <a href="">Privacy Policy</a>
+                        <a href="">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="location">
+                    <img src="asset/map.png" alt="map">
+                    <p>2100 Murray Ave. <br>Pittsburgh, PA. 15217<br>(412)000-5555</p>
+                </div>
+                <div class="operation">
+                    <p class="delivery-alert">Delivery ends 1 hour early</p>
+                    <p class="operation-hours">Operation Hours</p>
+                    <p class="hours">Monday - Friday<br>8 AM - 7 PM<br>Saturday - Sunday<br>12 PM - 8 PM</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
