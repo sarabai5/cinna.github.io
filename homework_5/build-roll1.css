@@ -67,6 +67,7 @@ body{
     display: flex;
     padding: 0.28em;
     width: 0.31rem;
+    cursor: pointer;
 }
 #cart-num{
     position: absolute;

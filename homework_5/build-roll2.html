@@ -8,6 +8,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="build-roll2.css">
+    <link rel="stylesheet" href="common.css">
     <title>Bon Bon Cinnamon Roll</title>
     <script src="rem.js"></script>
     <script src="order.js"></script>
@@ -15,6 +16,7 @@
 </head>
 
 <body onload="onload()">
+    <!-- header -->
     <div class="header">
         <div class="logo">
             <a href="index.html">
@@ -31,48 +33,74 @@
                 <a href="" class="nav-icon">
                     <img src="asset/account.png" alt="my-account-icon" />
                 </a>
-                <a href="" class="nav-icon">
+                <div class="nav-icon" id="cart-button" onclick="openCart()">
                     <img src="asset/cart.png" alt="shopping-cart" />
                     <div id="cart-num"></div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
+    <!-- End of header -->
 
-    <!-- <div class="top">
-        <a class="back-button" href="">Back</a>
-        <div class="progress">
-            <div class="stages">
-                <div class="start">
-                    <p>Start</p>
-                </div>
-                <div class="choose-numbers">
-                    <p>Choose Numbers</p>
-                </div>
-                <div class="choose-rolltype">
-                    <p>Choose Roll Type</p>
-                </div>
-                <div class="choose-glazing">
-                    <p>Choose Glazing</p>
-                </div>
-                <div class="added">
-                    <p>Added</p>
-                </div>
-            </div>
-            <div class="dot-circle">
-                <div class="dot"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-                <div class="circle"></div>
-            </div>
 
-            <div class="hr">
-                <div class="hr-solid"></div>
-                <div class="hr-dash"></div>
-            </div>
+    <!-- shopping cart -->
+    <!-- <div class="cart-page"> -->
+
+    <div id="container">
+        <div class="shopping-cart">
+            <p class="box-type">Box of 3</p>
+            <ul class="shopping-cart-items">
+
+                <li class="clearfix">
+                    <img class="cart-item-img" src="asset/menu1.png" alt="cart item 2" />
+                    <div class="cart-text">
+                        <div class="li-top">
+                            <div class="top-l">
+                                <span class="item-name">Classic Roll</span>
+                                <span class="glazing-name">Vanilla Milk</span>
+                            </div>
+                            <span class="item-quantity">x 2</span>
+                        </div>
+
+                        <div class="li-bottom">
+                            <button class="cart-remove-button"><img src="asset/trash-can.png"
+                                    alt="trash can icon"></button>
+                            <span class="item-price">$3.25</span>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="clearfix">
+                    <img class="cart-item-img" src="asset/menu2.png" alt="cart item 2" />
+                    <div class="cart-text">
+                        <div class="li-top">
+                            <div class="top-l">
+                                <span class="item-name">Honey Pecan Roll</span>
+                                <span class="glazing-name">Sugar Milk</span>
+                            </div>
+                            <span class="item-quantity">x 1</span>
+                        </div>
+
+                        <div class="li-bottom">
+                            <button class="cart-remove-button"><img src="asset/trash-can.png"
+                                    alt="trash can icon"></button>
+                            <span class="item-price">$3.25</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </div> -->
+        <div class="shopping-cart-footer">
+            <div class="shopping-cart-total">
+                <span class="total-price">Total: $9.75</span>
+                <span class="note">Tax not calculated</span>
+            </div>
+            <a href="#" class="button-in-cart">Checkout</a>
+        </div>
+    </div>
+    <!--end of container-->
+
+
 
     <div class="top">
         <div class="progress">

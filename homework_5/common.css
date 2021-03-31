@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&family=Varela+Round&display=swap');
+
+
+/* shopping cart */
+#container {
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+
+    border-radius: 0 0 0.3rem 0.3rem;
+    width: 3.67rem;
+    height: 6rem;
+    background-color: #FFE274;
+
+    top: 0.7rem;
+    right: 0.65rem;
+
+    color: #000000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.14rem;
+    text-decoration: none;
+
+
+}
+
+.shopping-cart {
+    background-color: #FFFFFF;
+    width: 3.5rem;
+    height: 5rem;
+    /* position: relative; */
+    border-radius: 3px;
+    margin-top: 0.08rem;
+    margin: 0.08rem 0.08rem 0rem;
+    /* padding: 0.08rem 0.08rem auto 0.08rem; */
+
+    display: inherit;
+    flex-direction: column;
+    justify-content: flex-start;    
+    /* align-items: flex-start; */
+}
+.title{
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #E8F7FF;
+    margin-bottom: 0.2rem;
+}
+.box-type{
+    color: #000000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.22rem;
+    font-weight: 600;
+    margin-left: 0.2rem;
+    display: inherit;
+}
+.edit{
+    display: inherit;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 0.2rem;
+    cursor: pointer;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.18rem;
+    font-weight: 600;
+    color: #8393EC;
+
+}
+.edit img{
+    width: 0.25rem;
+    height: 0.25rem;
+    margin-right: 0.1rem;
+}
+
+
+
+/* cart items */
+.shopping-cart-items{
+    display: inherit;
+    flex-direction: column;
+    font-size: 0.18rem;
+    margin: 0;
+    padding-inline-start: 20px;
+
+}
+.clearfix{
+    list-style-type: none;
+    display: inherit;
+    flex-direction: row;
+    /* justify-content: space-between; */
+
+    width: 3.42rem;
+    height: 1rem;
+    margin-bottom: 0.2rem;
+}
+.cart-item-img{
+    width: 0.75rem;
+    height: 0.73rem;
+}
+.cart-text{
+    display: inherit;
+    flex-direction: column;
+    width: 2.2rem;
+    margin-left: 0.1rem;
+}
+.li-top{
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.top-l{
+    display: inherit;
+    flex-direction: column;
+}
+.glazing-name{
+    color: #808080;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.14rem;
+}
+.li-bottom{
+    display: inherit;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0.1rem;
+}
+.cart-remove-button{
+    border: none;
+    background: none;
+    margin-right: 0.3rem;
+}
+.cart-remove-button img{
+    width: 0.25rem;
+    height: 0.25rem;
+}
+
+
+
+
+.shopping-cart-footer{
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0.3rem 0.4rem 0.2rem;
+
+    color: #000000;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.2rem;
+}
+.shopping-cart-total{
+    display: inherit;
+    flex-direction: column;
+}
+.note{
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.14rem;
+    color: #808080;
+    font-weight: 400;
+    line-height: 0.12rem;
+}
+.button-in-cart{
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.24rem;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+}
+.button-in-cart:hover{
+    transform: scale(1.1);
+    transition-duration: 0.1s;
+}

@@ -8,7 +8,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="cinna.css">
-    <link rel="stylesheet" href="css/practice1.css">
+    <link rel="stylesheet" href="common.css">
     <title>Bon Bon Cinnamon Roll</title>
     <script src="rem.js"></script>
     <script src="order.js"></script>
@@ -17,7 +17,7 @@
 </head>
 
 <body onload="onloadMenu()">
-
+    <!-- header -->
     <div class="header">
         <div class="logo">
             <a href="index.html">
@@ -34,14 +34,74 @@
                 <a href="" class="nav-icon">
                     <img src="asset/account.png" alt="my-account-icon" />
                 </a>
-                <a href="" class="nav-icon">
+                <div class="nav-icon" id="cart-button" onclick="openCart()">
                     <img src="asset/cart.png" alt="shopping-cart" />
                     <div id="cart-num"></div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
 
+
+    <!-- shopping cart -->
+    <!-- <div class="cart-page"> -->
+
+    <div id="container">
+        <div class="shopping-cart">
+            <p class="box-type">Box of 3</p>
+            <ul class="shopping-cart-items">
+
+                <li class="clearfix">
+                    <img class="cart-item-img" src="asset/menu1.png" alt="cart item 2" />
+                    <div class="cart-text">
+                        <div class="li-top">
+                            <div class="top-l">
+                                <span class="item-name">Classic Roll</span>
+                                <span class="glazing-name">Vanilla Milk</span>
+                            </div>
+                            <span class="item-quantity">x 2</span>
+                        </div>
+
+                        <div class="li-bottom">
+                            <button class="cart-remove-button"><img src="asset/trash-can.png"
+                                    alt="trash can icon"></button>
+                            <span class="item-price">$3.25</span>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="clearfix">
+                    <img class="cart-item-img" src="asset/menu2.png" alt="cart item 2" />
+                    <div class="cart-text">
+                        <div class="li-top">
+                            <div class="top-l">
+                                <span class="item-name">Honey Pecan Roll</span>
+                                <span class="glazing-name">Sugar Milk</span>
+                            </div>
+                            <span class="item-quantity">x 1</span>
+                        </div>
+
+                        <div class="li-bottom">
+                            <button class="cart-remove-button"><img src="asset/trash-can.png"
+                                    alt="trash can icon"></button>
+                            <span class="item-price">$3.25</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="shopping-cart-footer">
+            <div class="shopping-cart-total">
+                <span class="total-price">Total: $9.75</span>
+                <span class="note">Tax not calculated</span>
+            </div>
+            <a href="#" class="button-in-cart">Checkout</a>
+        </div>
+    </div>
+    <!--end of container-->
+
+
+    <!-- rolls content -->
     <div class="rollbox">
         <img class="roll-1" src="asset/cinna1.png" alt="cinnamon-roll" />
         <img class="roll-2" src="asset/cinna2.png" alt="cinnamon-roll" />

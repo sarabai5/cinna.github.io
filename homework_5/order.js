@@ -173,14 +173,16 @@ function onload(){
 function selectGlz(index){
     let id = Math.floor(index / 3);
     let dom = document.getElementsByClassName("glz")[index]
+    let progressDom = document.getElementsByClassName("task-undone")
+
     Rolls[id].glazing = dom.textContent
 
     for(let i = id * 3; i < id * 3 + 3; i++){
         let temp = document.getElementsByClassName("glz")[i]
         temp.style.backgroundColor = "#FFFFFF"
     }
-
     dom.style.backgroundColor = "#FFE274"
+    progressDom[1].style.backgroundColor = "#FFD433"
 }
 
 function addCart(){
@@ -203,6 +205,27 @@ function onloadMenu() {
         dom.style.display = "inline";
     } else {
         dom.style.display = "none";
+    }
+}
+
+let showCart = false
+
+function openCart(){
+    let cartDom = document.getElementById("cart-button");
+    let cart = document.getElementById("container");
+    console.log("1:", cart.style.display)
+
+    if (!showCart) {
+        cart.style.display = "flex";
+        cartDom.style.backgroundColor = "#FFE274";
+
+        showCart = true
+    } else {
+        cart.style.display = "none";
+        cartDom.style.backgroundColor = null;
+
+        showCart = false
+
     }
 
 }

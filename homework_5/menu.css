@@ -69,6 +69,7 @@ body{
     display: flex;
     padding: 0.28em;
     width: 0.31rem;
+    cursor: pointer;
 }
 #cart-num{
     display: none;
@@ -88,9 +89,6 @@ body{
 
 
 
-
-
-
 /* build roll content */
 .build{
     width: 100%;
@@ -99,7 +97,7 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     margin-top: -80px;
 }
@@ -107,7 +105,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -0.5rem;
+    /* margin-top: -0.5rem; */
+    margin-top: 1.1rem;
 }
 .roll-for-build{
     width: auto;
