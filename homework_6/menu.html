@@ -33,7 +33,7 @@
         <a href="" class="nav-icon">
           <img src="asset/account.png" alt="my-account-icon" />
         </a>
-        <div class="nav-icon" id="wishlist" onclick="openCart()">
+        <div class="nav-icon" id="wishlist" onclick="openLike()">
           <img src="asset/wishlist.png" alt="wishlist" />
         </div>
         <div class="nav-icon" id="cart-button" onclick="openCart()">
@@ -112,6 +112,70 @@
   </div>
   <!--end of container-->
 
+  <div id="likelist">
+    <div class="like-cart">
+      <!-- <div class="title">
+        <p class="box-type" id="likeType">Box of</p>
+        <div class="modify">
+          <div class="cart-remove-button" onclick="removeRolls()">
+            <img src="asset/trash-can.png" alt="trash can icon">
+            <p>Remove</p>
+          </div>
+          <div class="edit">
+            <img src="asset/edit-icon.png">
+            <p>Edit in build mode</p>
+          </div>
+        </div>
+      </div> -->
+
+      <ul class="shopping-cart-items" id="likes">
+
+        <!-- <li class="clearfix">
+          <img class="cart-item-img" src="asset/menu1.png" alt="cart item 2" />
+          <div class="cart-text">
+            <div class="li-top">
+              <div class="top-l">
+                <span class="item-name">.</span>
+                <span class="glazing-name">Vanilla Milk</span>
+              </div>
+              <span class="item-quantity">x 2</span>
+            </div>
+
+            <div class="li-bottom">
+              <button class="cart-remove-button"><img src="asset/trash-can.png" alt="trash can icon"></button>
+              <span class="item-price">$3.25</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="clearfix">
+          <img class="cart-item-img" src="asset/menu2.png" alt="cart item 2" />
+          <div class="cart-text">
+            <div class="li-top">
+              <div class="top-l">
+                <span class="item-name">Honey Pecan Roll</span>
+                <span class="glazing-name">Sugar Milk</span>
+              </div>
+              <span class="item-quantity">x 1</span>
+            </div>
+
+            <div class="li-bottom">
+              <button class="cart-remove-button"><img src="asset/trash-can.png" alt="trash can icon"></button>
+              <span class="item-price">$3.25</span>
+            </div>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+    <!-- <div class="shopping-cart-footer">
+      <div class="shopping-cart-total">
+        <span class="total-price" id="price">Total: $</span>
+        <span class="note">Tax not calculated</span>
+      </div>
+      <a href="#" class="button-in-cart">Checkout</a>
+    </div> -->
+  </div>
+
 
 
   <!-- build your roll content -->
@@ -127,20 +191,23 @@
   <h1>Signature 6</h1>
 
   <div class="menu-list">
+    <img class="menu-like" src="asset/hollow.png" onclick="clickLike(0)" />
     <div class="menu-image" style="background-image: url('asset/menu1.png');"></div>
     <div class="item-l">
-      <p class="names">Classic Roll</p>
+      <p class="item-title">Classic Roll</p>
       <p class="description">Classic Cinnamon Roll with vanilla or sugar frosting</p>
       <p class="details">630 kcal / roll<br><br>That superior flavor and unmistakable, far-reaching aroma
         comes from Makara® Cinnamon, which originates in the mountains of West Sumatra , ...</p>
     </div>
     <div class="item-r">
       <p class="names">$2.50</p>
-      <img src="asset/menu-arrow.png" alt="arrow">
+      <img class="menu-roll" src="asset/menu-arrow.png" alt="arrow">
     </div>
   </div>
 
   <div class="menu-list">
+    <img class="menu-like" src="asset/hollow.png" onclick="clickLike(1)" />
+
     <div class="menu-image" style="background-image: url('asset/menu2.png');"></div>
     <div class="item-l">
       <p class="names">Honey Pecan Roll</p>
@@ -155,6 +222,8 @@
   </div>
 
   <div class="menu-list">
+    <img class="menu-like" src="asset/hollow.png" onclick="clickLike(2)" />
+
     <div class="menu-image" style="background-image: url('asset/menu3.png');"></div>
     <div class="item-l">
       <p class="names">Berry Roll</p>
@@ -169,6 +238,8 @@
   </div>
 
   <div class="menu-list">
+    <img class="menu-like" src="asset/hollow.png" onclick="clickLike(3)" />
+
     <div class="menu-image" style="background-image: url('asset/menu4.png');"></div>
     <div class="item-l">
       <p class="names">Double Chocolate Roll</p>
@@ -183,6 +254,8 @@
   </div>
 
   <div class="menu-list">
+    <img class="menu-like" src="asset/hollow.png" onclick="clickLike(4)" />
+
     <div class="menu-image" style="background-image: url('asset/menu5.png');"></div>
     <div class="item-l">
       <p class="names">Classic Gluten-free Roll</p>
@@ -197,6 +270,8 @@
   </div>
 
   <div class="menu-list">
+    <img class="menu-like" src="asset/hollow.png" onclick="clickLike(5)" />
+
     <div class="menu-image" style="background-image: url('asset/menu6.png');"></div>
     <div class="item-l">
       <p class="names">Pumpkin Spice Roll</p>
