@@ -57,7 +57,7 @@ Rolls = Rolls ? JSON.parse(Rolls) : [
 let boxSelect = JSON.parse(localStorage.getItem("boxSelect")) 
 boxSelect = boxSelect ? JSON.parse(localStorage.getItem("boxSelect"))  : {
     index: 0,
-    num: 1
+    num: 0
 }
 /*
     boxSelect = {
