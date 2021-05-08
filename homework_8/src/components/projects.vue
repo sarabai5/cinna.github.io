@@ -60,7 +60,7 @@ export default {
           name: "PET  TRACKER | MONITOR | APP",
           desc: "App Design | IoT Design | User Research",
           button: "Discover",
-          img: "/assets/works/covers/cover1.png",
+          img: "../assets/works/covers/cover1.png",
           background: "#FEDCCC",
           path: "/works/FurGo",
           isHover: false
@@ -71,7 +71,7 @@ export default {
           name: "BAKERY SHOP WEBSITE",
           desc: "Web Design | User Testing | Usability Test | Front-End Coding",
           button: "Go Play",
-          img: "/assets/works/covers/cover2.gif",
+          img: "../assets/works/covers/cover2.gif",
           link:
             "https://sarabai5.github.io/cinna.github.io/homework_6/menu.html",
           background: "#8393EC",
