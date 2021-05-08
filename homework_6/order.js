@@ -1,64 +1,110 @@
 var Rolls = localStorage.getItem("Rolls");
 
-Rolls = Rolls ? JSON.parse(Rolls) : [
-    {
+Rolls = Rolls
+  ? JSON.parse(Rolls)
+  : [
+      {
         id: 0,
         name: "Classic Roll",
         img: "asset/menu1.png",
         price: 3.25,
         count: 0,
         glazing: ""
-    },
-    {
+      },
+      {
         id: 1,
         name: "Honey Pecan Roll",
         img: "asset/menu2.png",
         price: 3.25,
         count: 0,
         glazing: ""
-
-    },
-    {
+      },
+      {
         id: 2,
         name: "Berry Roll",
         img: "asset/menu3.png",
         price: 3.25,
         count: 0,
         glazing: ""
-    },
-    {
+      },
+      {
         id: 3,
         name: "Double Chocolate Roll",
         img: "asset/menu4.png",
         price: 3.25,
         count: 0,
         glazing: ""
-    },  
-    {
+      },
+      {
         id: 4,
         name: "Gluten-free Classic Roll",
         img: "asset/menu5.png",
         price: 3.25,
         count: 0,
         glazing: ""
-    },
-    {
+      },
+      {
         id: 5,
         name: "Pumpkin Spice Roll",
         img: "asset/menu6.png",
         price: 3.25,
         count: 0,
         glazing: ""
-    }
-]
+      }
+    ];
 
 /* choose rolls */
 
-let boxSelect = JSON.parse(localStorage.getItem("boxSelect")) 
-boxSelect = boxSelect ? JSON.parse(localStorage.getItem("boxSelect"))  : {
-    index: 0,
-    num: 0
-}
+var Likes = localStorage.getItem("Likes");
+
+Likes = Likes
+  ? JSON.parse(Likes)
+  : [
+      {
+        id: 0,
+        name: "Classic Roll",
+        img: "asset/menu1.png",
+        like: false
+      },
+      {
+        id: 1,
+        name: "Honey Pecan Roll",
+        img: "asset/menu2.png",
+        like: false
+      },
+      {
+        id: 2,
+        name: "Berry Roll",
+        img: "asset/menu3.png",
+        like: false
+      },
+      {
+        id: 3,
+        name: "Double Chocolate Roll",
+        img: "asset/menu4.png",
+        like: false
+      },
+      {
+        id: 4,
+        name: "Gluten-free Classic Roll",
+        img: "asset/menu5.png",
+        like: false
+      },
+      {
+        id: 5,
+        name: "Pumpkin Spice Roll",
+        img: "asset/menu6.png",
+        like: false
+      }
+    ];
+
+let boxSelect = JSON.parse(localStorage.getItem("boxSelect"));
+boxSelect = boxSelect
+  ? JSON.parse(localStorage.getItem("boxSelect"))
+  : {
+      index: 0,
+      num: 0
+    };
 /*
     boxSelect = {
         index: 1,
@@ -66,89 +112,91 @@ boxSelect = boxSelect ? JSON.parse(localStorage.getItem("boxSelect"))  : {
     }
 */
 
-
 /* choose numbers */
-function selectNum(index, num){
-    console.log(`User select rollNum is ${num}`) 
-    localStorage.setItem("boxSelect", JSON.stringify({
-        index: index,
-        num: num
-    }))
+function selectNum(index, num) {
+  console.log(`User select rollNum is ${num}`);
+  localStorage.setItem(
+    "boxSelect",
+    JSON.stringify({
+      index: index,
+      num: num
+    })
+  );
 
-    var list = document.getElementsByClassName("roll-selection-box");
-    for(let i = 0; i < list.length; i++){
-        let classVal = list[i].getAttribute("class") // "roll-selection-box"
-        if(index == i){
-            classVal = classVal.concat(" roll-selection-box--selected"); // "roll-selection-box" => "roll-selection-box roll-selection-box--selected"
-        }else{
-            classVal = classVal.replace(" roll-selection-box--selected", ""); // "roll-selection-box roll-selection-box--selected" => "roll-selection-box"
-        }
-        list[i].setAttribute("class", classVal)
+  var list = document.getElementsByClassName("roll-selection-box");
+  for (let i = 0; i < list.length; i++) {
+    let classVal = list[i].getAttribute("class"); // "roll-selection-box"
+    if (index == i) {
+      classVal = classVal.concat(" roll-selection-box--selected"); // "roll-selection-box" => "roll-selection-box roll-selection-box--selected"
+    } else {
+      classVal = classVal.replace(" roll-selection-box--selected", ""); // "roll-selection-box roll-selection-box--selected" => "roll-selection-box"
     }
+    list[i].setAttribute("class", classVal);
+  }
 }
 
-let restNum = boxSelect ? boxSelect.num : null
+let restNum = boxSelect ? boxSelect.num : null;
 
-function countRoll(index, flag){
-    let count = Rolls[index].count;
-    if (restNum == 0 && flag ==1) return;
-    if(count == 0 && flag == -1) return;
+function countRoll(index, flag) {
+  let count = Rolls[index].count;
+  if (restNum == 0 && flag == 1) return;
+  if (count == 0 && flag == -1) return;
 
-    Rolls[index].count = Rolls[index].count + flag;
+  Rolls[index].count = Rolls[index].count + flag;
 
-    let inputs = document.getElementsByClassName("input-number");
-    inputs[index].value = Rolls[index].count
+  let inputs = document.getElementsByClassName("input-number");
+  inputs[index].value = Rolls[index].count;
 
-    if (flag == 1) {
-        restNum--;
+  if (flag == 1) {
+    restNum--;
 
-        box.innerHTML = box.innerHTML + `<div class="box-${boxSelect.index}-roll" type="${index}"><img class="box-roll-img" src="${Rolls[index].img}"></div>`
-    } else {
-        restNum++;
+    box.innerHTML =
+      box.innerHTML +
+      `<div class="box-${boxSelect.index}-roll" type="${index}"><img class="box-roll-img" src="${Rolls[index].img}"></div>`;
+  } else {
+    restNum++;
 
-        let children = box.childNodes // get all rolls in box
-        for (let i = 0; i < children.length; i++){ // begin: let i = 0  i < 
-            if(children[i].getAttribute("type") == `${index}`){
-                box.removeChild(children[i])
-                break;
-            }
-
-        }
+    let children = box.childNodes; // get all rolls in box
+    for (let i = 0; i < children.length; i++) {
+      // begin: let i = 0  i <
+      if (children[i].getAttribute("type") == `${index}`) {
+        box.removeChild(children[i]);
+        break;
+      }
     }
-    let progressDom = document.getElementsByClassName("task-undone")
-    if (restNum == 0) {
-        progressDom[0].style.backgroundColor = "#FFD433"
-    } else {
-        progressDom[0].style.backgroundColor = "#FFFFFF"
-    }
+  }
+  let progressDom = document.getElementsByClassName("task-undone");
+  if (restNum == 0) {
+    progressDom[0].style.backgroundColor = "#FFD433";
+  } else {
+    progressDom[0].style.backgroundColor = "#FFFFFF";
+  }
 
-    localStorage.setItem("Rolls", JSON.stringify(Rolls))
+  localStorage.setItem("Rolls", JSON.stringify(Rolls));
 }
 
 /* choose glazing */
 // var selected = document.getElementsByClassName("add-glazing-button");
 function addGlazing(index) {
-    let dom = document.getElementsByClassName("add-glazing-button")[index]
-    dom.style.backgroundColor = "#FFE274"; 
+  let dom = document.getElementsByClassName("add-glazing-button")[index];
+  dom.style.backgroundColor = "#FFE274";
 
-    let content = document.getElementsByClassName("glazings")[index]
-    if (content.style.display == "flex") {
-      content.style.display = "none";
-      dom.style.backgroundColor = "#FFFFFF"; 
-    } else {
-      content.style.display = "flex";
-    }
-     
+  let content = document.getElementsByClassName("glazings")[index];
+  if (content.style.display == "flex") {
+    content.style.display = "none";
+    dom.style.backgroundColor = "#FFFFFF";
+  } else {
+    content.style.display = "flex";
+  }
 }
 
-
-function glazing(){
-    let list = document.getElementsByClassName("glz");
-    for(let i in list){
-        list[i].onclick = () => {
-            selectGlz(i)
-        }
-    }
+function glazing() {
+  let list = document.getElementsByClassName("glz");
+  for (let i in list) {
+    list[i].onclick = () => {
+      selectGlz(i);
+    };
+  }
 }
 
 /* 
@@ -162,77 +210,114 @@ arr[0]
 
 let box = null;
 
-function onload(){
-    box = document.getElementsByClassName("box")[boxSelect.index]
-    box.style.display = "flex";
+function onload() {
+  box = document.getElementsByClassName("box")[boxSelect.index];
+  box.style.display = "flex";
 
-    glazing();
-    onloadMenu();
+  glazing();
+  onloadMenu();
 }
 
-function selectGlz(index){
-    let id = Math.floor(index / 3);
-    let dom = document.getElementsByClassName("glz")[index]
-    let progressDom = document.getElementsByClassName("task-undone")
+function selectGlz(index) {
+  let id = Math.floor(index / 3);
+  let dom = document.getElementsByClassName("glz")[index];
+  let progressDom = document.getElementsByClassName("task-undone");
 
-    Rolls[id].glazing = dom.textContent
+  Rolls[id].glazing = dom.textContent;
 
-    for(let i = id * 3; i < id * 3 + 3; i++){
-        let temp = document.getElementsByClassName("glz")[i]
-        temp.style.backgroundColor = "#FFFFFF"
-    }
-    dom.style.backgroundColor = "#FFE274"
-    progressDom[1].style.backgroundColor = "#FFD433"
+  for (let i = id * 3; i < id * 3 + 3; i++) {
+    let temp = document.getElementsByClassName("glz")[i];
+    temp.style.backgroundColor = "#FFFFFF";
+  }
+  dom.style.backgroundColor = "#FFE274";
+  progressDom[1].style.backgroundColor = "#FFD433";
 
-    localStorage.setItem("Rolls", JSON.stringify(Rolls))
+  localStorage.setItem("Rolls", JSON.stringify(Rolls));
 }
 
-function addCart(){
-    if (restNum == 0) {
-        let num = localStorage.getItem("cartNum") || 0
-        num++;
-        let dom = document.getElementById("cart-num")
-        dom.style.display = "flex";
-        dom.textContent = num
-        localStorage.setItem("cartNum", num)
-        window.location.href = "menu.html"
-    } else return;
+function addCart() {
+  if (restNum == 0) {
+    let num = localStorage.getItem("cartNum") || 0;
+    num++;
+    let dom = document.getElementById("cart-num");
+    dom.style.display = "flex";
+    dom.textContent = num;
+    localStorage.setItem("cartNum", num);
+    window.location.href = "menu.html";
+  } else return;
 }
 
 function onloadMenu() {
-    let num = localStorage.getItem("cartNum") || 0
-    let dom = document.getElementById("cart-num")
-    dom.textContent = num
-    if (num > 0) {
-        dom.style.display = "inline";
-    } else {
-        dom.style.display = "none";
-    }
+  let num = localStorage.getItem("cartNum") || 0;
+  let dom = document.getElementById("cart-num");
+  dom.textContent = num;
+  if (num > 0) {
+    dom.style.display = "inline";
+  } else {
+    dom.style.display = "none";
+  }
 
-    initCart()
+  initCart();
+  initLike();
 }
 
-let showCart = false
+let showCart = false;
 
-function openCart(){
-    let cartDom = document.getElementById("cart-button");
-    let cart = document.getElementById("container");
+function openCart() {
+  let cartDom = document.getElementById("cart-button");
+  let cart = document.getElementById("container");
 
-    if (!showCart) {
-        cart.style.display = "flex";
-        cartDom.style.backgroundColor = "#FFE274";
+  if (!showCart) {
+    cart.style.display = "flex";
+    cartDom.style.backgroundColor = "#FFE274";
 
-        showCart = true
-    } else {
-        cart.style.display = "none";
-        cartDom.style.backgroundColor = null;
+    showCart = true;
 
-        showCart = false
+    if (showLike) {
+      let likeDom = document.getElementById("wishlist");
+      let like = document.getElementById("likelist");
 
+      like.style.display = "none";
+      likeDom.style.backgroundColor = null;
+
+      showLike = false;
     }
+  } else {
+    cart.style.display = "none";
+    cartDom.style.backgroundColor = null;
 
+    showCart = false;
+  }
 }
 
+let showLike = false;
+function openLike() {
+  let likeDom = document.getElementById("wishlist");
+  let like = document.getElementById("likelist");
+
+  if (!showLike) {
+    like.style.display = "flex";
+    likeDom.style.backgroundColor = "#FFE274";
+
+    showLike = true;
+
+    if (showCart) {
+      let cartDom = document.getElementById("cart-button");
+      let cart = document.getElementById("container");
+      cart.style.display = "none";
+      cartDom.style.backgroundColor = null;
+
+      showCart = false;
+    }
+  } else {
+    like.style.display = "none";
+    likeDom.style.backgroundColor = null;
+
+    showLike = false;
+  }
+
+  initLike();
+}
 
 // {
 //     id: 0,
@@ -243,22 +328,61 @@ function openCart(){
 //     glazing: ""
 // },
 
-
-function initCart(){
-    for(let i=0; i<Rolls.length; i++){
-        let roll = Rolls[i]
-        if (roll.count > 0){
-            addRollToCart(roll)
-        }
+function initCart() {
+  for (let i = 0; i < Rolls.length; i++) {
+    let roll = Rolls[i];
+    if (roll.count > 0) {
+      addRollToCart(roll);
     }
+  }
 
-    document.getElementById("boxType").innerText = `Box of ${boxSelect.num}`
-    document.getElementById("price").innerText = `Total: $${3.25 * boxSelect.num}`
+  document.getElementById("boxType").innerText = `Box of ${boxSelect.num}`;
+  document.getElementById("price").innerText = `Total: $${
+    3.25 * boxSelect.num
+  }`;
 }
 
-function addRollToCart(item){
-    let cart = document.getElementById("cart");
-    cart.innerHTML += `<li class="clearfix">
+function initLike() {
+  let cart = document.getElementById("likes");
+  if (!cart) return;
+  cart.innerHTML = "";
+  for (let i = 0; i < Likes.length; i++) {
+    let roll = Likes[i];
+    if (roll.like) {
+      addRollToLike(roll, i);
+    }
+  }
+
+  let rolls = document.getElementsByClassName("menu-like");
+
+  for (let i = 0; i < rolls.length; i++) {
+    rolls[i].src = Likes[i].like ? "asset/solid.png" : "asset/hollow.png";
+  }
+}
+
+function addRollToLike(item, index) {
+  let cart = document.getElementById("likes");
+  cart.innerHTML += `<li class="clearfix">
+      <img class="cart-item-img" src="${item.img}"/>
+      <div class="cart-text">
+        <div class="li-top">
+          <div class="top-like">
+            <span class="item-name">${item.name}</span>
+            <img class="item-like-mini" id="item-like-${index}" src="${
+    item.like ? "asset/solid.png" : "asset/hollow.png"
+  }" onclick="clickLike(${index})" />
+          </div>
+        </div>
+  
+        <div class="li-bottom">
+        </div>
+      </div>
+    </li>`;
+}
+
+function addRollToCart(item) {
+  let cart = document.getElementById("cart");
+  cart.innerHTML += `<li class="clearfix">
     <img class="cart-item-img" src="${item.img}"/>
     <div class="cart-text">
       <div class="li-top">
@@ -273,17 +397,36 @@ function addRollToCart(item){
         <span class="item-price">$${item.price}</span>
       </div>
     </div>
-  </li>`
+  </li>`;
 }
 
-function removeRolls(){
-    document.getElementById("cart").innerHTML = "";
-    localStorage.removeItem("Rolls")
-    localStorage.removeItem("cartNum")
+function removeRolls() {
+  document.getElementById("cart").innerHTML = "";
+  localStorage.removeItem("Rolls");
+  localStorage.removeItem("cartNum");
 
-    document.getElementById("cart-num").style.display = "none"
+  document.getElementById("cart-num").style.display = "none";
 
+  document.getElementById("boxType").innerText = `Box of 0`;
+  document.getElementById("price").innerText = `Total: $0`;
+}
 
-    document.getElementById("boxType").innerText = `Box of 0`
-    document.getElementById("price").innerText = `Total: $0`
+function clickLike(i) {
+  Likes[i].like = !Likes[i].like;
+
+  localStorage.setItem("Likes", JSON.stringify(Likes));
+
+  let rolls = document.getElementsByClassName("menu-like");
+
+  rolls[i].src = Likes[i].like ? "asset/solid.png" : "asset/hollow.png";
+
+  let miniLike = document.getElementById(`item-like-${i}`);
+  miniLike &&
+    (miniLike.src = Likes[i].like ? "asset/solid.png" : "asset/hollow.png");
+
+  if (miniLike && miniLike.parentNode) {
+    miniLike.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(
+      miniLike.parentNode.parentNode.parentNode.parentNode
+    );
+  }
 }

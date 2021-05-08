@@ -154,6 +154,7 @@ h1{
 }
 
 .menu-list{
+    position: relative;
     box-sizing: border-box;
     border: 3px solid #8393EC;
     border-radius: 0.8rem;
@@ -180,11 +181,20 @@ h1{
     background-position: center;
     background-repeat: no-repeat;
 }
-.menu-list img{
+.menu-roll{
     width: 3.41rem;
     height: 2.4rem;
     align-self: center;
 }
+
+.menu-like{
+    position: absolute;
+    top: 0.2rem;
+    right: 0.3rem;
+    width: 0.44rem;
+    height: 0.39rem;
+}
+
 .item-l{
     display: flex;
     align-items: flex-start;
@@ -193,16 +203,35 @@ h1{
     margin-right: 0.5rem;
 }
 .item-r{
-    display: flex;
-    align-items: flex-end;
     width: 1.15rem;
-    margin-right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 0 1.4rem 0;
+    
+    /* margin-right: 0.5rem; */
 }
-.names{
+
+/* .item-r p{
+    align-self: flex-start;
+    margin: 0.48rem 0.18rem 0 0;
+} */
+
+.item-title{
+    margin: 0.48rem 0 0 0;
     font-size: 0.28rem;
     letter-spacing: 0.05em;
     font-weight: 600;
-    margin-top: 0.48rem;
+}
+
+.names{
+    align-self: flex-start;
+    margin: 0.48rem 0 0 -0.5rem;
+    font-size: 0.28rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
 }
 
 .description{
@@ -219,10 +248,7 @@ h1{
     font-weight: 400;
 }
 
-.item-r p{
-    align-self: flex-start;
-    margin: 0.48rem 0.18rem 0 0;
-}
+
 .item-r img{
     width: .18rem;
     height: .5rem;

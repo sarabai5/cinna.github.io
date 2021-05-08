@@ -25,6 +25,29 @@
 
 }
 
+#likelist {
+    z-index: 1000;
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 0 0 0.3rem 0.3rem;
+    width: 3.67rem;
+    height: 6rem;
+    background-color: #FFE274;
+
+    top: 0.7rem;
+    right: 0.65rem;
+
+    color: #000000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.14rem;
+    text-decoration: none;
+
+
+}
+
 .shopping-cart {
     background-color: #FFFFFF;
     width: 3.5rem;
@@ -40,6 +63,24 @@
     justify-content: flex-start;  
     overflow-y: scroll;
   }
+
+.like-cart{
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    width: 3.5rem;
+    height: 5rem;
+    /* position: relative; */
+    border-radius: 3px;
+    margin: 0.08rem 0.08rem 0rem;
+    padding: 0.2rem 0;
+    /* padding: 0.08rem 0.08rem auto 0.08rem; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  
+    overflow-y: scroll;
+}
+
 .title{
     display: inherit;
     flex-direction: row;
@@ -131,9 +172,33 @@
     justify-content: space-between;
 }
 .top-l{
+    position: relative;
     display: inherit;
-    flex-direction: column;
+    flex-direction: row;
 }
+
+.top-like{
+    position: relative;
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-like{
+    margin: 0 0 0 0.2rem;
+    position: relative;
+    width: 0.22rem;
+    height: 0.20rem;
+}
+
+.item-like-mini{
+    margin: 0 0 0 0.2rem;
+    position: relative;
+    width: 0.22rem;
+    height: 0.20rem;
+}
+
 .glazing-name{
     color: #808080;
     font-family: 'Nunito', sans-serif;
