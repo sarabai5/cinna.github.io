@@ -24,16 +24,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/works/covers/cover2.gif"
   },
   {
-    "revision": "7fe07b1b056b6166d7a9",
-    "url": "/css/app.1425471a.css"
+    "revision": "0f4f0a47bfb6d6761484",
+    "url": "/css/app.1ab6b9f6.css"
   },
   {
-    "revision": "4303fdc67b2d06e220499413d67cafd8",
+    "revision": "11e5097563f8e1c545159840d74fba19",
     "url": "/index.html"
   },
   {
-    "revision": "7fe07b1b056b6166d7a9",
-    "url": "/js/app.48947d87.js"
+    "revision": "0f4f0a47bfb6d6761484",
+    "url": "/js/app.1cc231a0.js"
   },
   {
     "revision": "08f27f1d2dfd4f4ac095",

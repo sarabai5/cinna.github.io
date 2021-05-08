@@ -35,18 +35,18 @@ export default {
       medias: [
         {
           name: "email",
-          icon: "/assets/icons/media_email.png",
+          icon: "../assets/icons/media_email.png",
           url:
             "https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=jinfanb@andrew.cmu.edu"
         },
         {
           name: "linkedin",
-          icon: "/assets/icons/media_linkedin.png",
+          icon: "../assets/icons/media_linkedin.png",
           url: "https://www.linkedin.com/in/sara-jinfan-bai/"
         },
         {
           name: "ins",
-          icon: "/assets/icons/media_ins.png",
+          icon: "../assets/icons/media_ins.png",
           url: "https://www.instagram.com/sarainthesoda/"
         }
       ],
